@@ -103,14 +103,14 @@ function LamC(name, expr): LamT {
 }
 
 function exprToString(e: Expr) {
-    switch (e.type) {
-        case ExprE.Lit: return litToString(e.literal);
-        case ExprE.Var: return e.name;
-        case ExprE.App: return "(" + exprToString(e.expr1) + " " +
-            exprToString(e.expr2) + ")";
-        case ExprE.Lam: return "\\" + e.name + " -> " + exprToString(e.expr)
-        default: const _exhaustiveCheck: never = e;
-    }
+  switch (e.type) {
+    case ExprE.Lit: return litToString(e.literal);
+    case ExprE.Var: return e.name;
+    case ExprE.App: return "(" + exprToString(e.expr1) + " " +
+      exprToString(e.expr2) + ")";
+    case ExprE.Lam: return "\\" + e.name + " -> " + exprToString(e.expr)
+    default: const _exhaustiveCheck: never = e;
+  }
 }
 
 // (\x. x) 1
